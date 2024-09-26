@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  transition: 1s ease;
+
+  @include vp-1439 {
+    padding: 0 48px;
+  }
+
+  @include vp-1279 {
+    padding: 0 40px;
+  }
+
+  @include vp-1023 {
+    padding: 0 40px;
+  }
+
+  @include vp-767 {
+    padding: 0 20px;
+  }
+}

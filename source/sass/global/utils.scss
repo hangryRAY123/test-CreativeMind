@@ -1,0 +1,164 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  /* stylelint-disable-next-line */
+  min-height: calc(100 * var(--vh, 1vh));
+  background-color: #2c8488;
+
+  .header,
+  .footer {
+    flex-shrink: 0;
+  }
+
+  main {
+    flex-grow: 1;
+  }
+}
+
+.wrapper::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #2c8488;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 15;
+  transition: 0.3s ease;
+}
+
+.horizontal-wrapper {
+  display: flex;
+  width: 100%;
+
+  @include vp-1023 {
+    flex-direction: column;
+  }
+}
+
+.wrapper-bg {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+
+  @include vp-1023 {
+    display: block;
+
+    &__tablet {
+      display: block;
+    }
+
+    &__mobile {
+      display: none;
+    }
+  }
+
+  @include vp-767 {
+    &__tablet {
+      display: none;
+    }
+
+    &__mobile {
+      display: block;
+    }
+  }
+}
+
+.section-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 1s ease;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  @include vp-1023 {
+    display: none;
+  }
+}
+
+.wrapper.overflow::before {
+  opacity: 0.5;
+  visibility: visible;
+}
+
+body.overflow {
+  overflow: hidden;
+}
+
+.intro-main-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+}
+
+.rouble {
+  font-family: $ff-rouble;
+  /* stylelint-disable */
+  text-transform: lowercase !important;
+  font-weight: 400 !important;
+  /* stylelint-enable */
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  border: 0;
+
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+.scroll-lock-ios {
+  position: fixed;
+
+  overflow: hidden;
+}
+
+.scroll-lock {
+  overflow: hidden;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.no-transition {
+  /* stylelint-disable-next-line */
+  transition: none !important;
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}

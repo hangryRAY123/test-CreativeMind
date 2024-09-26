@@ -1,0 +1,204 @@
+.about {
+  position: relative;
+  display: flex;
+  background-color: #2c8488;
+  color: $color-default-white;
+  min-height: 1024px;
+  height: 100vh;
+  width: 100%;
+  flex-shrink: 0;
+
+
+  &.opacity .container {
+    opacity: 0;
+  }
+
+  &.opacity .section-bg{
+    opacity: 0;
+    transform:scale(1.5);
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin: auto 0;
+    width: 100%;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 694px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+  }
+
+  &__description {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    max-width: 346px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    span {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: left;
+    }
+  }
+
+  &__item:first-child {
+    svg {
+      color: #5ebbc5;
+    }
+  }
+
+  &__item:not(:first-child) {
+    svg {
+      stroke: #5ebbc5;
+    }
+  }
+
+  @include vp-1439 {
+    min-height: 833px;
+  }
+
+  @include vp-1279 {
+    min-height: 768px;
+
+    &__wrapper {
+      flex-direction: column;
+    }
+
+    &__list {
+      max-width: 100%;
+      flex-direction: row;
+    }
+
+    &__item {
+      flex-grow: 1;
+      width: 100%;
+
+      svg {
+        width: fit-content;
+        height: 40px;
+      }
+    }
+  }
+
+  @include vp-1023 {
+    height: auto;
+    background-color: transparent;
+    min-height: auto;
+    padding: 38px 0 50px;
+
+    &__title {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    &__inner {
+      gap: 20px;
+    }
+
+    &__content {
+      gap: 16px;
+    }
+
+    &__description {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &__list {
+      gap: 30px;
+    }
+
+    &__item {
+      gap: 16px;
+
+      span {
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+
+    &__item:first-child {
+      svg {
+        color: #fff;
+      }
+    }
+
+    &__item:not(:first-child) {
+      svg {
+        stroke: #fff;
+      }
+    }
+  }
+
+  @include vp-767 {
+    padding: 40px 0;
+
+    &__title {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &__content {
+      gap: 20px;
+    }
+
+    &__list {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    &__item {
+      svg {
+        height: 60px;
+      }
+    }
+  }
+
+  @include vp-374 {
+    &__description {
+      font-size: 14px;
+    line-height: 20px;
+    }
+
+    &__item span {
+      line-height: 20px;
+    }
+
+    &__item svg {
+      height: 44px;
+    }
+  }
+}

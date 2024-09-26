@@ -1,0 +1,183 @@
+.products {
+  position: relative;
+  background-color: $color-default-white;
+  color: #00616b;
+  padding: 60px 0;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 40px;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 27px;
+    text-align: left;
+  }
+
+  &__info {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 27px;
+    text-align: left;
+    color: #9f9f9f;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 32px;
+  }
+
+  &__item {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 241px;
+    height: 241px;
+    flex-shrink: 0;
+    background-color: #d7e9ed;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  &__img img {
+    object-fit: contain;
+  }
+
+  &__specification {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 25.5px;
+    text-align: left;
+    color: #5ebbc5;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 17px;
+    text-align: left;
+  }
+
+  @include vp-1279 {
+    &__list {
+      grid-template-columns: 1fr;
+      row-gap: 32px;
+    }
+
+    &__img {
+      width: 300px;
+      height: 300px;
+    }
+
+    &__item {
+      gap: 16px;
+    }
+
+    &__inner {
+      font-size: 14px;
+      gap: 12px;
+    }
+  }
+
+  @include vp-1023 {
+    padding: 40px 0;
+
+    &__title {
+      font-size: 20px;
+      line-height: 27px;
+    }
+
+    &__wrapper {
+      gap: 20px;
+    }
+
+    &__img {
+      width: 260px;
+      height: 260px;
+    }
+
+    &__inner {
+      font-size: 12px;
+    }
+  }
+
+  @include vp-767 {
+    &__title {
+      font-size: 16px;
+      line-height: 27px;
+    }
+  }
+
+  @media (max-width: (500px)) {
+    &__item {
+      flex-direction: column;
+    }
+
+    &__img {
+      width: 100%;
+      height: 335px;
+    }
+
+    &__inner {
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+
+  @include vp-374 {
+    &__info {
+      line-height: 15px;
+    }
+
+    &__img {
+      height: 280px;
+    }
+
+    &__item {
+      gap: 8px;
+    }
+
+    &__subtitle {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    &__specification {
+      gap: 8px;
+    }
+
+    &__inner {
+      font-size: 12px;
+      line-height: 17px;
+    }
+
+    &__list {
+      row-gap: 40px;
+    }
+  }
+}
